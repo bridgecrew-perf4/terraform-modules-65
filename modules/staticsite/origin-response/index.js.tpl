@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     }];
     headers['content-security-policy'] = [{
         key: 'Content-Security-Policy',
-        value: "default-src 'self'; base-uri 'self'; object-src 'none'"
+        value: "${csp}"
     }];
     headers['x-content-type-options'] = [{key: 'X-Content-Type-Options', value: 'nosniff'}];
     headers['x-frame-options'] = [{key: 'X-Frame-Options', value: 'DENY'}];

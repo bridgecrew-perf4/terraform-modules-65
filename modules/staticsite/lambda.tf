@@ -39,6 +39,9 @@ resource "aws_lambda_function" "orsp" {
 
 data "archive_file" "orsp" {
   type        = "zip"
-  source_file = "${path.module}/index.js"
-  output_path = "${path.module}/orsp.zip"
+  output_path = "${path.module}/origin-response/orsp.zip"
+  source {
+    filename = "index.js"
+    content  = templatefile("${path.module}/origin-response/index.js.tpl", { csp = var.content_security_policy })
+  }
 }

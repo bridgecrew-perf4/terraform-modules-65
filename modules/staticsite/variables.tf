@@ -19,6 +19,11 @@ variable "logbucket" {
   description = "s3 bucket for storing cloudfront access logs"
 }
 
+variable "content_security_policy" {
+  type    = string
+  default = "default-src 'self'; base-uri 'self'; object-src 'none'"
+}
+
 variable "origins" {
   type = list(map(string))
 }
