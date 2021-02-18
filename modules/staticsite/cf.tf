@@ -160,7 +160,7 @@ resource "aws_cloudfront_distribution" "d" {
       compress               = false
       forwarded_values {
         query_string = true
-        headers      = ["*"]
+        headers      = ["Host", "Origin", "Referer"]
         cookies {
           forward = "all"
         }
