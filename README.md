@@ -29,11 +29,10 @@ provider "aws" {
 }
 
 module "staticsite" {
-  source    = "git::https://github.com/kwo/terraform-modules.git//modules/staticsite?ref=v1.0.0"
-  base_name = var.base_name
-  logbucket = var.logbucket
-  domain    = var.domain
-  origins   = var.origins
+  source    = "git::https://github.com/kwo/terraform-modules.git//modules/staticsite?ref=v1.1.1"
+  base_name = "my-project"
+  logbucket = "the-site-logs"
+  domain    = "example.com"
   providers = {
     aws.us_east_1 = aws.us_east_1
   }
