@@ -160,7 +160,8 @@ resource "aws_cloudfront_distribution" "d" {
       compress               = false
       forwarded_values {
         query_string = true
-        headers      = ["Host", "Origin", "Referer"]
+        # do not forward the 'Host' header or apigw (or normal SNI-based) domains will not be able to be found
+        headers      = ["Referer", "User-Agent"]
         cookies {
           forward = "all"
         }

@@ -29,7 +29,7 @@ provider "aws" {
 }
 
 module "staticsite" {
-  source    = "git::https://github.com/kwo/terraform-modules.git//modules/staticsite?ref=v1.1.1"
+  source    = "git::https://github.com/kwo/terraform-modules.git//modules/staticsite?ref=v1.1.5"
   base_name = "my-project"
   logbucket = "the-site-logs"
   domain    = "example.com"
